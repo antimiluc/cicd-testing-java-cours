@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class MultiplicationJourneyE2ETest {
+class MultiplicationJourneyE2ETest {
 
   @LocalServerPort
   private int port;
@@ -47,7 +47,7 @@ public class MultiplicationJourneyE2ETest {
   }
 
   @Test
-  void multiplyTwoBySixteenMustReturn32(){
+  void multiplyTwoBySixteenMustReturn32() {
 
     //GIVEN
     webDriver.get(baseUrl);
@@ -63,7 +63,7 @@ public class MultiplicationJourneyE2ETest {
     submitButton.click();
 
     //THEN
-    WebDriverWait waiter = new WebDriverWait(webDriver,5);
+    WebDriverWait waiter = new WebDriverWait(webDriver, 5);
     WebElement solutionElement = waiter.until(ExpectedConditions.presenceOfElementLocated(By.id("solution")));
     String solution = solutionElement.getText();
     assertThat(solution).isEqualTo("32");

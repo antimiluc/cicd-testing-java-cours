@@ -27,7 +27,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @ExtendWith(LoggingExtension.class)
-public class CalculatorTest {
+class CalculatorTest {
 
 	private static Instant startedAt;
 
@@ -40,13 +40,13 @@ public class CalculatorTest {
 	}
 
 	@BeforeEach
-	public void initCalculator() {
+	void initCalculator() {
 		logger.info("Appel avant chaque test");
 		calculatorUnderTest = new Calculator();
 	}
 
 	@AfterEach
-	public void undefCalculator() {
+	void undefCalculator() {
 		logger.info("Appel après chaque test");
 		calculatorUnderTest = null;
 	}
